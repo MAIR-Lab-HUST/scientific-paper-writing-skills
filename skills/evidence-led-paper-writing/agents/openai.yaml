@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evidence-Led Paper Writing"
+  short_description: "Plan papers around traceable scientific evidence."
+  default_prompt: "Use $evidence-led-paper-writing to turn my findings into a scoped paper argument."
+policy:
+  allow_implicit_invocation: true
