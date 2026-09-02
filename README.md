@@ -1,55 +1,62 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 # Evidence-Led Paper Writing Techniques
 
-Reusable techniques for turning research material into scientific prose whose claims are proportional to its evidence.
+Reusable techniques for turning research material into scientific prose whose claims are proportional to the available evidence.
 
-本仓库提供一套可复用的、以证据为中心的科研论文写作方法，以及一个可在 Codex 中使用的技能包。它帮助作者把“已有结果”组织成可检验、可追溯、边界清晰的论证，而不是把写作变成对结论的修辞放大。
+This repository provides an evidence-centered scientific writing methodology and a reusable Codex skill. It helps researchers organize existing results into testable, traceable, and properly scoped arguments without rhetorically overstating the conclusions.
 
-## What this repository is for | 适用场景
+## What this repository is for
 
 Use these techniques when you need to:
 
 - turn observations, analyses, experiments, and figures into a coherent paper argument;
-- distinguish what was observed from what is hypothesized or explained;
+- distinguish observations from hypotheses and supported explanations;
 - test competing explanations before committing to a narrative;
-- calibrate a claim to the evidence actually available;
-- preserve reported numbers, citations, qualifiers, and uncertainty during revision; and
+- calibrate each claim to the evidence actually available;
+- preserve numbers, citations, conditions, comparisons, and uncertainty during revision; and
 - choose the smallest useful writing output, from a figure caption to a section plan.
 
-适合用于论文构思、结果段改写、图表叙事、审稿回复前自检，以及团队内部的论证一致性检查。
+Typical uses include paper planning, Results-section revision, figure-led storytelling, pre-rebuttal checks, and argument-consistency reviews within a research team.
 
-## Repository layout | 仓库结构
+## Repository layout
 
 ```text
 .
-├── README.md                         # Project overview and usage
+├── README.md                         # English documentation
+├── README.zh-CN.md                   # Simplified Chinese documentation
 ├── WRITING_TECHNIQUES.md             # Standalone guide for people and teams
 ├── LICENSE                           # CC BY 4.0 for prose and templates
 └── skills/
     └── evidence-led-paper-writing/   # Codex skill package
 ```
 
-## Install the Codex skill | 安装 Codex 技能
+## Install the Codex skill
 
 1. Clone or download this repository.
 2. Copy `skills/evidence-led-paper-writing` into the `skills` directory configured for your Codex environment.
 3. Restart or reload Codex if your environment does not detect new skills automatically.
-4. Invoke it by name in a request, for example: “Use `$evidence-led-paper-writing` to audit this Results section.”
+4. Invoke the skill by name, for example: “Use `$evidence-led-paper-writing` to audit this Results section.”
 
-For a shell-based installation, set `CODEX_HOME` to your Codex home directory, then run one of the following from the repository root:
+For a shell-based installation, set `CODEX_HOME` to your Codex home directory, then run one of the following commands from the repository root.
+
+PowerShell:
 
 ```powershell
 New-Item -ItemType Directory -Force "$env:CODEX_HOME\skills\evidence-led-paper-writing" | Out-Null
 Copy-Item -Recurse -Force .\skills\evidence-led-paper-writing\* "$env:CODEX_HOME\skills\evidence-led-paper-writing\"
 ```
 
+Bash:
+
 ```bash
 mkdir -p "$CODEX_HOME/skills/evidence-led-paper-writing"
 cp -R skills/evidence-led-paper-writing/. "$CODEX_HOME/skills/evidence-led-paper-writing/"
 ```
 
-If your Codex setup uses a different managed skill location, use that location instead. The destination folder should retain the package name `evidence-led-paper-writing`.
+If your Codex setup uses a different managed skill location, use that location instead. Keep the destination folder name `evidence-led-paper-writing`.
 
-## Example prompts | 示例提示词
+## Example prompts
 
 ```text
 Use $evidence-led-paper-writing to convert these experiment notes into a
@@ -57,8 +64,9 @@ problem → testable claim → method → evidence → scope map. Flag every mis
 ```
 
 ```text
-请使用 $evidence-led-paper-writing 审查这段 Results：分别标出观察事实、
-假设和被证据支持的解释；不要补造实验、数值或引用。
+Use $evidence-led-paper-writing to audit this Results section. Mark observations,
+hypotheses, and evidence-supported explanations separately. Do not invent results,
+numbers, experiments, or citations.
 ```
 
 ```text
@@ -68,15 +76,16 @@ the alternative explanation it addresses, and one residual limitation.
 
 ```text
 Rewrite this paragraph conservatively. Preserve all numbers, citations,
-conditions, comparisons, and uncertainty; weaken any claim not directly supported.
+conditions, comparisons, and uncertainty; weaken any unsupported claim.
 ```
 
 ```text
-基于现有结果，给出最小但有信息量的下一步验证：说明它区分哪些竞争解释，
-以及阳性和阴性结果各意味着什么。
+Given the current results, propose the smallest informative next test.
+Explain which competing explanations it distinguishes and what positive
+and negative outcomes would each mean.
 ```
 
-## Core practices | 核心原则
+## Core practices
 
 The central chain is:
 
@@ -90,19 +99,19 @@ At every link, ask whether the next statement follows from the preceding evidenc
 
 The companion guide, [WRITING_TECHNIQUES.md](WRITING_TECHNIQUES.md), expands these practices into checklists, templates, and examples.
 
-## Boundaries | 使用边界
+## Boundaries
 
-These materials support reasoning and revision; they do not validate scientific truth. They should not be used to:
+These materials support reasoning and revision; they do not validate scientific truth. Do not use them to:
 
 - invent results, sample sizes, citations, methods, or statistical support;
 - conceal uncertainty, negative results, protocol deviations, or conflicting evidence;
 - turn correlation into causation without a warranted design and analysis;
 - replace domain expertise, ethics review, data governance, or coauthor review; or
-- reproduce copyrighted text or pass generated prose off as unreviewed evidence.
+- reproduce copyrighted text or present generated prose as unreviewed evidence.
 
 Authors remain responsible for source checking, analytical validity, authorship, and compliance with their venue and institution.
 
-## Contributing | 贡献方式
+## Contributing
 
 Contributions are welcome when they make the techniques clearer, more testable, or easier to apply across fields.
 
@@ -115,3 +124,7 @@ Before opening a pull request:
 5. Ensure prose and templates can be shared under this repository's license.
 
 For substantial proposals, open an issue first with the writing problem, the intended user outcome, and a minimal example.
+
+## License
+
+The prose and reusable templates in this repository are licensed under [CC BY 4.0](LICENSE).
